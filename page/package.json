@@ -1,0 +1,25 @@
+{
+  "name": "databinding",
+  "version": "1.0.0",
+  "description": "taller de angular",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-auto-validate": "^1.19.0",
+    "angular-strap": "^2.3.12",
+    "bootstrap": "^3.3.7",
+    "graphql-request": "^1.8.2"
+  },
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  },
+  "scripts": {
+    "lite": "lite-server --host=0.0.0.0 & sass --watch resources/scss:resources/css"
+  },
+  "keywords": [
+    "angular",
+    "html"
+  ],
+  "author": "ccampos",
+  "license": "ISC"
+}

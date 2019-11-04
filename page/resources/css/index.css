@@ -1,0 +1,48 @@
+header {
+  display: flex;
+}
+
+header h1 {
+  padding: 14px;
+}
+.container {
+  margin-top: 25px; }
+  .container .search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 14px;
+    margin-bottom: 20px; }
+    .container .search .form-group {
+      display: flex;
+      align-items: center; }
+      .container .search .form-group .glyphicon-search {
+        margin-right: 8px; }
+      .container .search .form-group .glyphicon-sort-by-attributes {
+        margin-right: 8px;
+        margin-left: 8px; }
+    .container .search .createBTN {
+      position: absolute;
+      right: 15px;
+      top: 15px; }
+  .container table .photo {
+    display: flex;
+    justify-content: center; }
+    .container table .photo .img-circle {
+      width: 30px;
+      height: 30px; }
+
+.modal-backdrop.am-fade {
+  opacity: .5;
+  transition: opacity .15s linear; }
+  .modal-backdrop.am-fade.ng-enter {
+    opacity: 0; }
+    .modal-backdrop.am-fade.ng-enter.ng-enter-active {
+      opacity: .5; }
+  .modal-backdrop.am-fade.ng-leave {
+    opacity: .5; }
+    .modal-backdrop.am-fade.ng-leave.ng-leave-active {
+      opacity: 0; }
+
+/*# sourceMappingURL=index.css.map */

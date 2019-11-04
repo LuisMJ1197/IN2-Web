@@ -1,0 +1,18 @@
+<div id="createModal" class="modal" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" ng-click="createModal.hide()" class="close" aria-label="Close">&times;</button>
+        <h4 class="modal-title">Create product</h4>
+      </div>
+      <div class="modal-body">
+        <form action="">
+          <ng-include src="'templates/form.tpl.html'"></ng-include>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="createContact()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>

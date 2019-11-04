@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- para explicar el binding de un dato con la vista -->
+<html lang="en" ng-app="productApp">
+<head>
+    <meta charset="UTF-8">
+    <title>PRODUCTS</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/css/index.css">
+    <script type="text/javascript" src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Products</h1>
+  </header>
+  <div class="container">
+      <div class="row">
+        <div class="col-md-8" ng-controller="productController">
+          <div class="search">
+            <div class="form-group">
+              <i style="cursor: pointer;"class="glyphicon glyphicon-search" ng-click="searchByID()"></i>
+              <input id="searchInput" type="text" class="form-control" placeholder="Search by ID" ng-model="search">
+              <button style="margin-left:15px;"class="btn btn-primary searchAllBTN" ng-click="searchAll()">Search All</button>
+              <button id="simulate" style="display: none;" ng-click="console.log(products);"></button>
+            </div>
+            <!-- button.btn.btn-primary.createBTN>{Crear} -->
+            <button class="btn btn-primary createBTN" ng-click="showCreateProduct()">Create</button>
+          </div>
+          <table class="table table-bordered">
+            <tr>
+              <th>Id</th>
+              <th>Photo</th>
+              <th>Name</th>
+            </tr>
+            <tr ng-repeat="product in products.products | orderBy:orderType" ng-click="products.selectedProduct = product" ng-class="{'active' : products.selectedProduct.idalimento == product.idalimento}">
+              <td>{{ product.idalimento }}</td>
+              <td class="photo"><img ng-src="{{ product.foto }}" alt="product photo" class="img-circle"></td>
+              <td>{{ product.nombre }}</td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-4" ng-controller="productDetailController">
+          <div class="panel panel-default">
+            <div class="panel-heading">Details
+              <button style="margin-left: 10px;" class="btn btn-danger btn-sm pull-right" ng-click="delete()">Delete</button>
+              <button class="btn btn-success btn-sm pull-right" ng-click="update()">Update</button>
+              <div class="clearfix"></div>
+            </div>
+              <div class="panel-body">
+                <form action="">
+                  <ng-include src="'templates/form.tpl.html'"></ng-include>
+                </form>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+    <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="resources/js/index.js"></script>
+    <script type="text/javascript" src="node_modules/angular-strap/dist/angular-strap.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-strap/dist/angular-strap.tpl.min.js"></script>
+</html>

@@ -1,0 +1,23 @@
+type Query {
+  products: [Product]
+  product(idalimento: ID!): [Product]
+}
+
+type Mutation {
+  createProduct(idalimento: ID!, nombre: String!, foto: String!, cantidad: Int!, fechacaducidad: String!): Result!
+  updateProduct(idalimento: ID!, nombre: String!, foto: String!, cantidad: Int!, fechacaducidad: String!): Result!
+  deleteProduct(idalimento: ID!): Result!
+}
+
+type Product {
+  idalimento: ID
+  nombre: String
+  foto: String
+  cantidad: Int
+  fechacaducidad: String
+}
+
+type Result {
+  status: String!
+  message: String!
+}
